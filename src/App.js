@@ -14,7 +14,7 @@ class App extends Component {
         <p className="App-intro">
           Together we sport!
         </p>
-        <Title />
+        <Title content="All Matches"/>
       </div>
     );
   }
