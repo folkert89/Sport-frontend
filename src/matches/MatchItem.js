@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import JoinButton from '../components/JoinButton'
 import './MatchItem.css'
 
 class MatchItem extends PureComponent {
@@ -15,6 +16,7 @@ class MatchItem extends PureComponent {
             { players && <li><span role="img" aria-label="pescatarian">🐟</span></li> }
           </ul>
         </div>
+        <JoinButton />
       </article>
     )
   }
