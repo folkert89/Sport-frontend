@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import JoinButton from '../components/JoinButton'
+import Paper from 'material-ui/Paper'
 import './MatchItem.css'
 
 class MatchItem extends PureComponent {
@@ -7,7 +8,7 @@ class MatchItem extends PureComponent {
     const { title, open, location, players } = this.props
 
     return(
-      <article className="match">
+      <Paper className="match">
         <h1>{ title }</h1>
         <div>
           <p>{ location }</p>
@@ -17,7 +18,7 @@ class MatchItem extends PureComponent {
           </ul>
         </div>
         <JoinButton />
-      </article>
+      </Paper>
     )
   }
 }
