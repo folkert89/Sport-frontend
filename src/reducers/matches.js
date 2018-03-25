@@ -1,3 +1,5 @@
+import { CREATE_MATCH } from '../actions/matches/create'
+
 const matches = [
   {
     title: 'Football',
@@ -26,5 +28,11 @@ const matches = [
 ]
 
 export default (state = matches, { type, payload } = {}) => {
-  return state
+  switch(type) {
+    case CREATE_MATCH :
+      return [Object.assign({}, payload)].concat(state)
+
+    default :
+      return state
+  }
 }
