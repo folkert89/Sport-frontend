@@ -8,7 +8,7 @@ class MatchItem extends PureComponent {
     const { title, open, location, players } = this.props
 
     return(
-      <Paper className="match">
+      <article className="match">
         <h1>{ title }</h1>
         <div>
           <p>{ location }</p>
@@ -18,7 +18,7 @@ class MatchItem extends PureComponent {
           </ul>
         </div>
         <JoinButton />
-      </Paper>
+      </article>
     )
   }
 }
