@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import Title from '../components/Title'
 import MatchItem from './MatchItem'
 
@@ -22,4 +23,8 @@ class MatchesContainer extends PureComponent {
   }
 }
 
-export default MatchesContainer
+const MapStateToProps = ({ matches }) => ({
+  matches
+})
+
+export default connect(MapStateToProps)(MatchesContainer)
