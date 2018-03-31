@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 import MatchesContainer from './MatchesContainer'
 import MatchItem from './MatchItem'
 import Title from '../components/Title'
+
 const matches = [
   {
     title: 'Football',
@@ -43,7 +44,7 @@ describe('<MatchesContainer />', () => {
   })
 
   it('renders all matches as a MatchItem', () => {
-    matches.map((matches, index) => {
+    matches.map((match, index) => {
       return expect(container).toContainReact(<MatchItem key={index} { ...matches } />)
     })
   })
