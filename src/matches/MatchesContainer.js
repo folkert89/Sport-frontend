@@ -2,6 +2,7 @@ import React, { PureComponent, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Title from '../components/Title'
 import MatchItem from './MatchItem'
+import MatchEditor from './MatchEditor'
 
 class MatchesContainer extends PureComponent {
   renderMatch(match, index) {
@@ -14,6 +15,8 @@ class MatchesContainer extends PureComponent {
         <header>
           <Title content="Matches" />
         </header>
+
+        <MatchEditor />
 
         <main>
           { this.props.matches.map(this.renderMatch) }
