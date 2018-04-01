@@ -16,11 +16,12 @@ class MatchEditor extends PureComponent {
   constructor(props) {
     super()
 
-    const { title, summary, open, closed, players, location, photo } = props
+    const { title, date, summary, open, closed, players, location, photo } = props
 
     this.state = {
       title,
       summary,
+      date,
       open,
       closed,
       players,
@@ -57,6 +58,11 @@ class MatchEditor extends PureComponent {
     })
   }
 
+  updateDate(event) {
+    this.setState({
+      date: this.refs.date.value
+    })
+  }
 
   setType(event) {
     this.setState({
@@ -73,6 +79,7 @@ class MatchEditor extends PureComponent {
       closed,
       players,
       location,
+      date,
       photo,
     } = this.state
 
@@ -81,6 +88,7 @@ class MatchEditor extends PureComponent {
       summary: toMarkdown(summary),
       open,
       closed,
+      date,
       players,
       location,
       joined: false,
@@ -118,6 +126,15 @@ class MatchEditor extends PureComponent {
           defaultValue={this.state.photo}
           onChange={this.updatePhoto.bind(this)}
           onKeyDown={this.updatePhoto.bind(this)} />
+
+        <input
+          type="date"
+          ref="date"
+          className="date"
+          placeHolder="Date"
+          defaultValue={new Date()}
+          onChange={this.updateDate.bind(this)}
+          onKeyDown={this.updateDate.bind(this)} />
 
         <input
           type="number"
