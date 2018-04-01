@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import 'medium-editor/dist/css/medium-editor.css'
 import 'medium-editor/dist/css/themes/default.css'
 import './MatchEditor.css'
+import createMatch from '../actions/matches/create'
 
 const TYPES = [
   'open',
@@ -86,7 +87,7 @@ class MatchEditor extends PureComponent {
       photo,
     }
 
-    console.log(match)
+    this.props.createMatch(match)
   }
 
   render() {
@@ -142,4 +143,4 @@ class MatchEditor extends PureComponent {
   }
 }
 
-export default MatchEditor
+export default connect(null, { createMatch })(MatchEditor)
