@@ -44,6 +44,12 @@ class MatchEditor extends PureComponent {
     })
   }
 
+  updatePlayers(event) {
+    this.setState({
+      players: this.refs.players.value
+    })
+  }
+
   updateIntro(text, medium) {
     this.setState({
       summary: text
@@ -111,6 +117,15 @@ class MatchEditor extends PureComponent {
           defaultValue={this.state.photo}
           onChange={this.updatePhoto.bind(this)}
           onKeyDown={this.updatePhoto.bind(this)} />
+
+        <input
+          type="number"
+          ref="players"
+          className="players"
+          placeholder="Amount of players"
+          defaultValue={this.state.players}
+          onChange={this.updatePlayers.bind(this)}
+          onKeyDown={this.updatePlayers.bind(this)} />
 
         {TYPES.map((type) => {
           return <label key={type} htmlFor={type}>

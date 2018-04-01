@@ -18,6 +18,8 @@
     .editor .title:focus,
     .editor .photo:focus {
       outline: none; }
+  .editor .players {
+    width: 10em; }
   .editor .title {
     font-size: 2em; }
   .editor .actions {
