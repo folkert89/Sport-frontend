@@ -14,7 +14,7 @@ class MatchItem extends PureComponent {
           <p>{ location }</p>
           <ul className="bullet">
             { open && <li><span role="img" class="fa fa-user-plus"></span></li> }
-            { players && <li>5 <span role="img" class="fa fa-users"></span></li> }
+            { players && <li>{players} <span role="img" class="fa fa-users"></span></li> }
           </ul>
         </div>
         <JoinButton />

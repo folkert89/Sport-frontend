@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+/todos
+./todos
+
 # testing
 /coverage
 

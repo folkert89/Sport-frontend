@@ -132,7 +132,7 @@ class MatchEditor extends PureComponent {
           ref="date"
           className="date"
           placeHolder="Date"
-          defaultValue={new Date()}
+          defaultValue={new Date().toISOString().slice(0,10)}
           onChange={this.updateDate.bind(this)}
           onKeyDown={this.updateDate.bind(this)} />
 
