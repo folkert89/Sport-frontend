@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Title from '../components/Title'
 import MatchItem from './MatchItem'
 import MatchEditor from './MatchEditor'
+import './MatchItem.css'
 
 class MatchesContainer extends PureComponent {
   renderMatch(match, index) {
@@ -11,14 +12,14 @@ class MatchesContainer extends PureComponent {
 
   render() {
     return(
-      <div className="matches wrapper">
+      <div className="wrapper">
         <header>
           <Title content="Matches" />
         </header>
 
         <MatchEditor />
 
-        <main>
+        <main className="matches">
           { this.props.matches.map(this.renderMatch) }
         </main>
       </div>
