@@ -10,7 +10,7 @@ ul.bullet {
 .match {
   border: 1px solid black;
   flex: 1;
-
+  
   background-color: #f1f1f1;
   width: 100px;
   margin: 10px;

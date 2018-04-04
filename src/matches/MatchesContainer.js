@@ -7,7 +7,7 @@ import './MatchItem.css'
 
 class MatchesContainer extends PureComponent {
   renderMatch(match, index) {
-    return <MatchItem key={index} { ...match } />
+    return <MatchItem key={index} index={index} { ...match } />
   }
 
   render() {

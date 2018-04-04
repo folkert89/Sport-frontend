@@ -1,20 +1,18 @@
+
 import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
-import join from '../actions/matches/join'
 import './JoinButton.css'
 
 class JoinButton extends PureComponent {
+  constructor() {
+    super()
 
-  componentWillMount() {
-    const { match, index } = this.props
-
+    this.state = {
+      joined: false
+    }
   }
 
   classNames() {
-    console.log('komt alleen op begin aan')
-    const { match } = this.props
-    const joined = match.joined
-    console.log(joined)
+    const { joined } = this.state
     let classes = 'join'
 
     if (joined) { classes += ' joined'}
@@ -23,16 +21,13 @@ class JoinButton extends PureComponent {
   }
 
   toggleJoin() {
-
-    const joined = !this.props.match.joined
-
-    this.props.join(joined, this.props.index)
+    this.setState({
+      joined: !this.state.joined
+    })
   }
 
   render() {
-    const { match } = this.props
-    const joined = match.joined
-
+    const { joined } = this.state
     return (
       <p className={ this.classNames() }>
         <button onClick={ this.toggleJoin.bind(this) }>
@@ -54,13 +49,4 @@ class JoinButton extends PureComponent {
   }
 }
 
-const MapStateToProps = ({matches}, parentProps) => {
-  let index = parentProps.index
-
-  return{
-    match: matches[index],
-    index
-  }
-}
-
-export default connect(MapStateToProps, { join })(JoinButton)
+export default JoinButton
